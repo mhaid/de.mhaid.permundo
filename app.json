@@ -46,9 +46,6 @@
 			}
 		]
 	},
-	"bugs": {
-		"url": "https://github.com/mhaid/de.mhaid.permundo/issues"
-	},
 	"drivers": [
 		{
 			"id": "PSC132ZW",
@@ -97,6 +94,10 @@
 						]
 					}
 				]
+			},
+			"images": {
+				"large": "/drivers/PSC132ZW/assets/images/large.png",
+				"small": "/drivers/PSC132ZW/assets/images/small.png"
 			}
 		},
 		{
@@ -150,6 +151,10 @@
 						]
 					}
 				]
+			},
+			"images": {
+				"large": "/drivers/PSC152ZW/assets/images/large.png",
+				"small": "/drivers/PSC152ZW/assets/images/small.png"
 			}
 		}
 	],

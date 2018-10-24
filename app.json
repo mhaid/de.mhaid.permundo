@@ -1,0 +1,269 @@
+{
+	"id": "de.mhaid.permundo",
+	"sdk": 2,
+	"version": "1.0.0",
+	"compatibility": "1.x >=1.5.6",
+	"name": {
+		"nl": "Permundo",
+		"en": "Permundo"
+	},
+	"description": {
+		"nl": "Voegt ondersteuning toe voor Permundo-apparaten.",
+		"en": "Adds support for Permundo devices."
+	},
+	"category": [
+		"appliances",
+		"lights",
+		"security",
+		"climate"
+	],
+	"tags": {
+		"nl": [ "Permundo", "stopcontact", "blinds" ],
+		"en": [ "Permundo", "socket", "blinds" ]
+	},
+	"images": {
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
+	},
+	"permissions": [
+		"homey:wireless:zwave",
+		"homey:manager:ledring",
+		"homey:manager:speech-output"
+	],
+	"author": {
+		"email": "mhaid2016@outlook.com",
+		"name": "Morris Haid"
+	},
+	"contributors": {
+		"developers": [
+			{
+				"email": "mhaid2016@outlook.com",
+				"name": "Morris Haid"
+			}
+		]
+	},
+	"drivers": [
+		{
+			"id": "PSC132ZW",
+			"class": "socket",
+			"capabilities": [ 
+				"onoff",
+				"measure_power"
+			],
+			"name": {
+				"nl": "PSC132ZW Driver",
+				"en": "PSC132ZW Driver"
+			},
+			"zwave": {
+				"manufacturerId": 581,
+				"productTypeId": 3,
+				"productId": 2,
+				"learnmode": {
+					"image": "/drivers/PSC132ZW/assets/learnmode.svg",
+					"instruction": {
+						"nl": "Houd de knop op je Permundo-socket drie seconden lang vast",
+						"en": "Hold the button on your Permundo socket for three seconds"
+					}
+				},
+				"associationGroups": [
+					1
+				]
+			},
+			"mobile": {
+				"components": [
+				   {
+						"id": "icon",
+                		"capabilities": [ 
+							"onoff" 
+						]
+					},
+					{
+						"id": "toggle",
+						"capabilities": [
+							"onoff"
+						]
+					},
+					{
+						"id": "sensor",
+						"capabilities": [
+							"measure_power"
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "PSC152ZW",
+			"class": "blinds",
+			"capabilities": [ 
+				"windowcoverings_state",
+				"dim",
+				"measure_power"
+			],
+			"name": {
+				"nl": "PSC152ZW Driver",
+				"en": "PSC152ZW Driver"
+			},
+			"images": {
+				"large": "/drivers/PSC152ZW/assets/images/large.png",
+				"small": "/drivers/PSC152ZW/assets/images/small.png"
+			},
+			"zwave": {
+				"manufacturerId": 581,
+				"productTypeId": 3,
+				"productId": 4,
+				"learnmode": {
+					"image": "/drivers/PSC152ZW/assets/learnmode.svg",
+					"instruction": {
+						"nl": "Houd de knop op je Permundo-socket drie seconden lang vast.",
+						"en": "Hold the button on your Permundo socket for three seconds."
+					}
+				},
+				"associationGroups": [
+					1
+				]
+			},
+			"mobile": {
+				"components": [
+				   {
+						"id": "icon",
+                		"capabilities": [ 
+						]
+					},
+					{
+						"id": "slider",
+						"capabilities": [
+							"dim"
+						]
+					},
+					{
+						"id": "sensor",
+						"capabilities": [
+							"measure_power"
+						]
+					}
+				]
+			}
+		}
+	],
+	"flow": {
+		"triggers": [
+			{
+				"id": "PSC132ZW_turned_on",
+				"title": {
+					"nl": "Het licht is aan",
+					"en": "The light is on"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC132ZW"
+					}
+				]
+			},
+			{
+				"id": "PSC132ZW_turned_off",
+				"title": {
+					"nl": "Het licht is uit",
+					"en": "The light is off"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC132ZW"
+					}
+				]
+			},
+			{
+				"id": "PSC152ZW_blinds_closed",
+				"title": {
+					"nl": "De blinds zijn gesloten",
+					"en": "The blinds are closed"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC152ZW"
+					}
+				]
+			}
+		],
+		"actions": [
+			{
+				"id": "PSC132ZW_turn_light_on",
+				"title": {
+					"nl": "Schakel het licht in",
+					"en": "Turn light on"
+				},
+				"hint": {
+					"nl": "Schakelt het licht in",
+					"en": "Turns light on"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC132ZW"
+					}
+				]
+			},
+			{
+				"id": "PSC132ZW_turn_light_off",
+				"title": {
+					"nl": "Schakel licht uit",
+					"en": "Turn light off"
+				},
+				"hint": {
+					"nl": "Schakelt het licht uit",
+					"en": "Turns light off"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC132ZW"
+					}
+				]
+			},
+			{
+				"id": "PSC152ZW_move_blinds_up",
+				"title": {
+					"nl": "Breng jaloezieën omhoog",
+					"en": "Move blinds up"
+				},
+				"hint": {
+					"nl": "Stelt jaloezieën in staat omhoog",
+					"en": "Sets blinds in state up"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC152ZW"
+					}
+				]
+			},
+			{
+				"id": "PSC152ZW_move_blinds_down",
+				"title": {
+					"nl": "Verplaats de jaloezieën omlaag",
+					"en": "Move blinds down"
+				},
+				"hint": {
+					"nl": "Schakelt jaloezieën in staat omlaag in",
+					"en": "Sets blinds in state down"
+				},
+				"args": [
+					{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=PSC152ZW"
+					}
+				]
+			}
+		]
+	}
+}

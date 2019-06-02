@@ -1,4 +1,4 @@
-ï»¿{
+{
 	"id": "de.mhaid.permundo",
 	"sdk": 2,
 	"version": "2.0.0",
@@ -11,7 +11,7 @@
 	"description": {
 		"nl": "Voegt ondersteuning toe voor Permundo-apparaten.",
 		"en": "Adds support for Permundo devices.",
-		"de": "FÃ¼gt UnterstÃ¼tzung fÃ¼r Permundo-GerÃ¤te hinzu."
+		"de": "Fügt Unterstützung für Permundo-Geräte hinzu."
 	},
 	"category": [
 		"appliances",
@@ -20,7 +20,7 @@
 		"climate"
 	],
 	"tags": {
-		"nl": [ "Permundo", "stopcontact", "jaloezieÃ«n" ],
+		"nl": [ "Permundo", "stopcontact", "jaloezieën" ],
 		"en": [ "Permundo", "socket", "blinds" ],
 		"de": [ "Permundo", "Steckdose", "Jalousien" ]
 	},
@@ -70,7 +70,7 @@
 					"instruction": {
 						"nl": "Houd de knop op je Permundo-relais drie seconden lang vast.",
 						"en": "Hold the button on your Permundo relais for three seconds.",
-						"de": "Halten Sie die Taste an Ihrem Permundo-Relais drei Sekunden lang gedrÃ¼ckt."
+						"de": "Halten Sie die Taste an Ihrem Permundo-Relais drei Sekunden lang gedrückt."
 					}
 				},
 				"associationGroups": [
@@ -139,7 +139,7 @@
 					"instruction": {
 						"nl": "Houd de knop op je Permundo-actor drie seconden lang vast.",
 						"en": "Hold the button on your Permundo actuator for three seconds.",
-						"de": "Halten Sie die Taste an Ihrem Permundo-Aktor drei Sekunden lang gedrÃ¼ckt."
+						"de": "Halten Sie die Taste an Ihrem Permundo-Aktor drei Sekunden lang gedrückt."
 					}
 				},
 				"associationGroups": [
@@ -172,7 +172,7 @@
 				"hint": {
 					"nl": "Deze parameter (30) bepaalt de modus van dit apparaat.",
 					"en": "This parameter (30) determines the operating mode for this device.",
-					"de": "Dieser Parameter (30) bestimmt den Betriebsmodus des GerÃ¤ts."
+					"de": "Dieser Parameter (30) bestimmt den Betriebsmodus des Geräts."
 				},
 				"zwave": {
 					"index": 30,
@@ -199,6 +199,6 @@
 				]
 			}
 			]
-        }
+		}
 	]
 }

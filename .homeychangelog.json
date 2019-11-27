@@ -1,0 +1,12 @@
+{
+  "1.0.0": {
+    "en": "First version. Slat adjustment for PSC152ZW is not working so far.",
+    "de": "Erste Version. Die Lamellenverstellung für den PSC152ZW funktioniert bisher nicht.",
+    "nl": "Eerste versie. De lamellenverstelling voor PSC152ZW werkt tot nu toe niet."
+  },
+  "2.0.0": {
+    "en": "Works now with Homey version 2.x.",
+    "de": "Funktioniert jetzt mit der Homey-Version 2.x.",
+    "nl": "Werkt nu met Homey versie 2.x."
+  }
+}

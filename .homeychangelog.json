@@ -8,5 +8,10 @@
     "en": "Works now with Homey version 2.x.",
     "de": "Funktioniert jetzt mit der Homey-Version 2.x.",
     "nl": "Werkt nu met Homey versie 2.x."
+  },
+  "2.0.1": {
+    "en": "Added german and dutch readme. Works now with the new AppStore. Small Bugfixes.",
+    "de": "Deutsche und niederländische Readme hinzugefügt. Funktioniert jetzt mit dem neuen AppStore. Kleine Bugfixes.",
+    "nl": "Toegevoegd zijn het duits en nederlands readme. Werkt nu met de nieuwe AppStore. Kleine Bugfixes."
   }
 }

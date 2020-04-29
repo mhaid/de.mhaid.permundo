@@ -1,5 +1,3 @@
-Unterstützung für Permundo Z-Wave-Geräte hinzugefügt.
-
 Unterstützte Geräte:
 - Ein/Aus Netzschalter PSC132ZW
 - Aktor für Jalousien / Rollläden PSC152ZW

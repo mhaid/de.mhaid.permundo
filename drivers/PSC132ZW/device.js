@@ -1,12 +1,12 @@
 'use strict';
 
 const Homey = require('homey');
-const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
+const ZwaveDevice = require('homey-zwavedriver');
 
 class Permundo_PSC132ZW extends ZwaveDevice {
 
 	// this method is called when the Device is inited
-	onMeshInit() {
+	async onNodeInit() {
 
 		// enable debugging
 		this.enableDebug();
@@ -16,12 +16,11 @@ class Permundo_PSC132ZW extends ZwaveDevice {
 		
 		// Capabilities
 		this.registerCapability('onoff', 'SWITCH_BINARY');
-//		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('measure_power', 'METER', {
 			getOpts: {
 				getOnStart: true,
 			},
-			getParserV2: () => ({
+			getParser: () => ({
 				Properties1: {
 					Scale: 0,
 				},

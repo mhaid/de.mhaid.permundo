@@ -28,38 +28,32 @@ class Permundo_PSC132ZW extends ZwaveDevice {
 		});
 
 		// Trigger
-//		let triggerTurnedOn = new Homey.FlowCardTriggerDevice('PSC132ZW_turned_on');
-//		triggerTurnedOn
-//			.register()
-//			.trigger()
-//				.catch( this.error )
-//				.then( this.log )
+//		let triggerTurnedOn = this.homey.flow.getConditionCard('PSC132ZW_turned_on');
+//		triggerTurnedOn.registerRunListener(async (args, state) => {
+//			this.log();
+//			return true;
+//		});
 
-//		let triggerTurnedOff = new Homey.FlowCardTriggerDevice('PSC132ZW_turned_off');
-//		triggerTurnedOff
-//			.register()
-//			.trigger()
-//				.catch( this.error )
-//				.then( this.log )
+//		let triggerTurnedOff = this.homey.flow.getConditionCard('PSC132ZW_turned_off');
+//		triggerTurnedOff.registerRunListener(async (args, state) => {
+//			this.log());
+//			return true;
+//		});
 
 		// Action
-//		let setLightOn = new Homey.FlowCardAction('PSC132ZW_turn_light_on');
-//		setLightOn
-//			.register()
-//			.registerRunListener(( args, state ) => {
-//				return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
-//					'Switch Value': 255
-//				});
+//		let setLightOn = this.homey.flow.getActionCard('PSC132ZW_turn_light_on');
+//		setLightOn.registerRunListener(async (args, state) => {
+//			return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
+//				'Switch Value': 255
 //			});
+//		});
 
-//		let setLightOff = new Homey.FlowCardAction('PSC132ZW_turn_light_off');
-//		setLightOff
-//			.register()
-//			.registerRunListener(( args, state ) => {
-//				return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
-//					'Switch Value': 0
-//				});
+//		let setLightOff = this.homey.flow.getActionCard('PSC132ZW_turn_light_off');
+//		setLightOff.registerRunListener(async (args, state) => {
+//			return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
+//				'Switch Value': 0
 //			});
+//		});
 
 	}
 

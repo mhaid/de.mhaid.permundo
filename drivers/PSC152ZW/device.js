@@ -1,18 +1,17 @@
 'use strict';
 
-const Homey = require('homey');
 const ZwaveDevice = require('homey-zwavedriver');
 
 class Permundo_PSC152ZW extends ZwaveDevice {
 
 	// this method is called when the Device is inited
-	async onNodeInit() {
+	async onNodeInit({ node }) {
 
 		// enable debugging
-		this.enableDebug();
+		//this.enableDebug();
 
 		// print the node's info to the console
-		this.printNode();
+		//this.printNode();
 
 		// Capabilities
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL');

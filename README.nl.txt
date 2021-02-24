@@ -1,5 +1,3 @@
-Voegt ondersteuning voor Permundo Z-Wave-apparaten toe.
-
 Ondersteunde apparaten:
 - Aan/uit-schakelaar PSC132ZW
 - Actuator voor jaloezieën / rolluiken PSC152ZW

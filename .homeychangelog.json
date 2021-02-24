@@ -13,5 +13,8 @@
     "en": "Added german and dutch readme. Works now with the new AppStore. Small Bugfixes.",
     "de": "Deutsche und niederländische Readme hinzugefügt. Funktioniert jetzt mit dem neuen AppStore. Kleine Bugfixes.",
     "nl": "Toegevoegd zijn het duits en nederlands readme. Werkt nu met de nieuwe AppStore. Kleine Bugfixes."
+  },
+  "3.0.0": {
+    "en": "Added support for Homey V5 + Bugfix"
   }
 }

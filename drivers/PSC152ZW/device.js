@@ -1,28 +1,26 @@
 'use strict';
 
-const Homey = require('homey');
-const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
+const ZwaveDevice = require('homey-zwavedriver');
 
 class Permundo_PSC152ZW extends ZwaveDevice {
 
 	// this method is called when the Device is inited
-	onMeshInit() {
+	async onNodeInit({ node }) {
 
 		// enable debugging
-		this.enableDebug();
+		//this.enableDebug();
 
 		// print the node's info to the console
-		this.printNode();
+		//this.printNode();
 
 		// Capabilities
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL');
 		this.registerCapability('windowcovering_state', 'SWITCH_BINARY');
-//		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('measure_power', 'METER', {
 			getOpts: {
 				getOnStart: true,
 			},
-			getParserV2: () => ({
+			getParser: () => ({
 				Properties1: {
 					Scale: 0,
 				},
@@ -30,31 +28,26 @@ class Permundo_PSC152ZW extends ZwaveDevice {
 		});
 
 		// Trigger
-//		let triggerBlindsClosed = new Homey.FlowCardTrigger('PSC152ZW_blinds_closed');
-//		triggerBlindsClosed
-//			.register()
-//			.trigger()
-//				.catch( this.error )
-//				.then( this.log )
+//		let triggerBlindsClosed = this.homey.flow.getConditionCard('PSC152ZW_blinds_closed');
+//		triggerBlindsClosed.registerRunListener(async (args, state) => {
+//			this.log();
+//			return true;
+//		});
 
 		// Action
-//		let setBlindsDown = new Homey.FlowCardAction('PSC152ZW_move_blinds_down');
-//		setBlindsDown
-//			.register()
-//			.registerRunListener(( args, state ) => {
-//				return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
-//					'Switch Value': 0
-//				});
+//		let setBlindsDown = this.homey.flow.getActionCard('PSC152ZW_move_blinds_down');
+//		setBlindsDown.registerRunListener(async (args, state) => {
+//			return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
+//				'Switch Value': 0
 //			});
+//		});
 
-//		let setBlindsUp = new Homey.FlowCardAction('PSC152ZW_move_blinds_up');
-//		setBlindsUp
-//			.register()
-//			.registerRunListener(( args, state ) => {
-//				return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
-//					'Switch Value': 255
-//				});
+//		let setBlindsUp = this.homey.flow.getActionCard('PSC152ZW_move_blinds_up');
+//		setBlindsUp.registerRunListener(async (args, state) => {
+//			return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
+//				'Switch Value': 255
 //			});
+//		});
 
 	}
 

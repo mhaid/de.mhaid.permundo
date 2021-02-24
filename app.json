@@ -1,28 +1,40 @@
 {
 	"id": "de.mhaid.permundo",
-	"sdk": 2,
-	"version": "2.0.1",
-	"compatibility": ">=1.5.6",
+	"sdk": 3,
+	"version": "3.0.0",
+	"compatibility": ">=5.0.0",
+	"brandColor": "#b9c526",
 	"name": {
 		"nl": "Permundo",
 		"en": "Permundo",
 		"de": "Permundo"
 	},
 	"description": {
-		"nl": "Voegt ondersteuning toe voor Permundo-apparaten.",
-		"en": "Adds support for Permundo devices.",
-		"de": "Fügt Unterstützung für Permundo-Geräte hinzu."
+		"en": "the Smart Control company",
+		"nl": "the Smart Control company",
+		"de": "the Smart Control company"
 	},
 	"category": [
 		"appliances",
 		"lights",
-		"security",
-		"climate"
+		"security"
 	],
 	"tags": {
-		"nl": [ "Permundo", "stopcontact", "jaloezieën" ],
-		"en": [ "Permundo", "socket", "blinds" ],
-		"de": [ "Permundo", "Steckdose", "Jalousien" ]
+		"en": [ 
+			"Permundo", 
+			"socket", 
+			"blinds" 
+		],
+		"nl": [ 
+			"Permundo", 
+			"stopcontact", 
+			"JaloezieÃ«n" 
+		],
+		"de": [ 
+			"Permundo", 
+			"Steckdose", 
+			"Jalousien" 
+		]
 	},
 	"images": {
 		"large": "/assets/images/large.png",
@@ -48,6 +60,11 @@
 			}
 		]
 	},
+	"bugs": {
+		"url": "https://github.com/mhaid/de.mhaid.permundo/issues"
+	},
+	"source": "https://github.com/mhaid/de.mhaid.permundo",
+	"support": "mailto:mhaid2016@outlook.com",
 	"drivers": [
 		{
 			"id": "PSC132ZW",
@@ -57,8 +74,8 @@
 				"measure_power"
 			],
 			"name": {
-				"nl": "Installatierelais PSC132ZW",
 				"en": "Installation Relais PSC132ZW",
+				"nl": "Installatierelais PSC132ZW",
 				"de": "Einbau-Relais PSC132ZW"
 			},
 			"zwave": {
@@ -68,9 +85,9 @@
 				"learnmode": {
 					"image": "/drivers/PSC132ZW/assets/learnmode.svg",
 					"instruction": {
-						"nl": "Houd de knop op je Permundo-relais drie seconden lang vast.",
 						"en": "Hold the button on your Permundo relais for three seconds.",
-						"de": "Halten Sie die Taste an Ihrem Permundo-Relais drei Sekunden lang gedrückt."
+						"nl": "Houd de knop op je Permundo-relais drie seconden lang vast.",
+						"de": "Halten Sie die Taste an Ihrem Permundo-Relais drei Sekunden lang gedrÃ¼ckt."
 					}
 				},
 				"associationGroups": [
@@ -79,34 +96,12 @@
 				"associationGroupsOptions": {
 					"1": {
 						"hint": {
-							"nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
 							"en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
+							"nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
 							"de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
 						}
 					}
 				}
-			},
-			"mobile": {
-				"components": [
-					{
-						"id": "icon",
-						"capabilities": [
-							"onoff"
-						]
-					},
-					{
-						"id": "sensor",
-						"capabilities": [
-							"measure_power"
-						]
-					},
-					{
-						"id": "toggle",
-						"capabilities": [
-							"onoff"
-						]
-					}
-				]
 			},
 			"images": {
 				"large": "/drivers/PSC132ZW/assets/images/large.png",
@@ -122,13 +117,9 @@
 				"measure_power"
 			],
 			"name": {
-				"nl": "Jaloezieactor PSC152ZW",
 				"en": "Shutter Actuator PSC152ZW",
+				"nl": "Jaloezieactor PSC152ZW",
 				"de": "Einbau-Jalousieaktor PSC152ZW"
-			},
-			"images": {
-				"large": "/drivers/PSC152ZW/assets/images/large.png",
-				"small": "/drivers/PSC152ZW/assets/images/small.png"
 			},
 			"zwave": {
 				"manufacturerId": 581,
@@ -137,9 +128,9 @@
 				"learnmode": {
 					"image": "/drivers/PSC152ZW/assets/learnmode.svg",
 					"instruction": {
-						"nl": "Houd de knop op je Permundo-actor drie seconden lang vast.",
 						"en": "Hold the button on your Permundo actuator for three seconds.",
-						"de": "Halten Sie die Taste an Ihrem Permundo-Aktor drei Sekunden lang gedrückt."
+						"nl": "Houd de knop op je Permundo-actor drie seconden lang vast.",
+						"de": "Halten Sie die Taste an Ihrem Permundo-Aktor drei Sekunden lang gedrÃ¼ckt."
 					}
 				},
 				"associationGroups": [
@@ -149,8 +140,8 @@
 				"associationGroupsOptions": {
 					"1": {
 						"hint": {
-							"nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
 							"en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
+							"nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
 							"de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
 						}
 					}
@@ -165,14 +156,14 @@
 				"id": "operating_mode",
 				"type": "dropdown",
 				"label": {
-					"nl": "Besturingsmodus",
 					"en": "Operating mode",
+					"nl": "Besturingsmodus",
 					"de": "Betriebsmodus"
 				},
 				"hint": {
-					"nl": "Deze parameter (30) bepaalt de modus van dit apparaat.",
 					"en": "This parameter (30) determines the operating mode for this device.",
-					"de": "Dieser Parameter (30) bestimmt den Betriebsmodus des Geräts."
+					"nl": "Deze parameter (30) bepaalt de modus van dit apparaat.",
+					"de": "Dieser Parameter (30) bestimmt den Betriebsmodus des GerÃ¤ts."
 				},
 				"zwave": {
 					"index": 30,
@@ -183,16 +174,16 @@
 				{
 					"id": "0",
 					"label": {
-						"nl": "Rolluik modus, zonder lamellenverstelling",
 						"en": "Roller blind mode, without slat adjustment",
+						"nl": "Rolluik modus, zonder lamellenverstelling",
 						"de": "Rolladenmodus ohne Lamellenverstellung"
 					}
  				},
 				{
 					"id": "64",
 					"label": {
-						"nl": "Jaloezie modus, met lamellenverstelling",
 						"en": "Venetian blind mode, with slat adjustment",
+						"nl": "Jaloezie modus, met lamellenverstelling",
 						"de": "Jalousiemodus mit Lamellenverstellung"
 					}
 				}

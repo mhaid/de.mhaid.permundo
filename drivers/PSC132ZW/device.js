@@ -1,27 +1,25 @@
 'use strict';
 
-const Homey = require('homey');
-const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
+const { ZwaveDevice } = require('homey-zwavedriver');
 
 class Permundo_PSC132ZW extends ZwaveDevice {
 
 	// this method is called when the Device is inited
-	onMeshInit() {
+	async onNodeInit({ node }) {
 
 		// enable debugging
-		this.enableDebug();
+		//this.enableDebug();
 
 		// print the node's info to the console
-		this.printNode();
+		//this.printNode();
 		
 		// Capabilities
 		this.registerCapability('onoff', 'SWITCH_BINARY');
-//		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('measure_power', 'METER', {
 			getOpts: {
 				getOnStart: true,
 			},
-			getParserV2: () => ({
+			getParser: () => ({
 				Properties1: {
 					Scale: 0,
 				},
@@ -29,38 +27,32 @@ class Permundo_PSC132ZW extends ZwaveDevice {
 		});
 
 		// Trigger
-//		let triggerTurnedOn = new Homey.FlowCardTriggerDevice('PSC132ZW_turned_on');
-//		triggerTurnedOn
-//			.register()
-//			.trigger()
-//				.catch( this.error )
-//				.then( this.log )
+//		let triggerTurnedOn = this.homey.flow.getConditionCard('PSC132ZW_turned_on');
+//		triggerTurnedOn.registerRunListener(async (args, state) => {
+//			this.log();
+//			return true;
+//		});
 
-//		let triggerTurnedOff = new Homey.FlowCardTriggerDevice('PSC132ZW_turned_off');
-//		triggerTurnedOff
-//			.register()
-//			.trigger()
-//				.catch( this.error )
-//				.then( this.log )
+//		let triggerTurnedOff = this.homey.flow.getConditionCard('PSC132ZW_turned_off');
+//		triggerTurnedOff.registerRunListener(async (args, state) => {
+//			this.log());
+//			return true;
+//		});
 
 		// Action
-//		let setLightOn = new Homey.FlowCardAction('PSC132ZW_turn_light_on');
-//		setLightOn
-//			.register()
-//			.registerRunListener(( args, state ) => {
-//				return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
-//					'Switch Value': 255
-//				});
+//		let setLightOn = this.homey.flow.getActionCard('PSC132ZW_turn_light_on');
+//		setLightOn.registerRunListener(async (args, state) => {
+//			return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
+//				'Switch Value': 255
 //			});
+//		});
 
-//		let setLightOff = new Homey.FlowCardAction('PSC132ZW_turn_light_off');
-//		setLightOff
-//			.register()
-//			.registerRunListener(( args, state ) => {
-//				return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
-//					'Switch Value': 0
-//				});
+//		let setLightOff = this.homey.flow.getActionCard('PSC132ZW_turn_light_off');
+//		setLightOff.registerRunListener(async (args, state) => {
+//			return args.device.getCommandClass("SWITCH_BINARY").SWITCH_BINARY_SET({
+//				'Switch Value': 0
 //			});
+//		});
 
 	}
 

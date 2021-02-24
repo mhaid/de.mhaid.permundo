@@ -1,5 +1,3 @@
-Adds support for Permundo Z-Wave devices.
-
 Supported devices:
 - On/Off Power Switch PSC132ZW
 - Actuator for Blinds / Shutters PSC152ZW

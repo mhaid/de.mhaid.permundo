@@ -11,7 +11,7 @@ class Permundo_PSC132ZW extends ZwaveDevice {
 		//this.enableDebug();
 
 		// print the node's info to the console
-		//this.printNode();
+		this.printNode();
 		
 		// Capabilities
 		this.registerCapability('onoff', 'SWITCH_BINARY');

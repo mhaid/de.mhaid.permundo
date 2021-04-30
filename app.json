@@ -1,195 +1,237 @@
 {
-	"id": "de.mhaid.permundo",
-	"sdk": 3,
-	"version": "3.0.0",
-	"compatibility": ">=5.0.0",
-	"brandColor": "#b9c526",
-	"name": {
-		"nl": "Permundo",
-		"en": "Permundo",
-		"de": "Permundo"
-	},
-	"description": {
-		"en": "the Smart Control company",
-		"nl": "the Smart Control company",
-		"de": "the Smart Control company"
-	},
-	"category": [
-		"appliances",
-		"lights",
-		"security"
-	],
-	"tags": {
-		"en": [ 
-			"Permundo", 
-			"socket", 
-			"blinds" 
-		],
-		"nl": [ 
-			"Permundo", 
-			"stopcontact", 
-			"Jaloezieën" 
-		],
-		"de": [ 
-			"Permundo", 
-			"Steckdose", 
-			"Jalousien" 
-		]
-	},
-	"images": {
-		"large": "/assets/images/large.png",
-		"small": "/assets/images/small.png"
-	},
-	"permissions": [
-		"homey:manager:ledring",
-		"homey:manager:speech-output"
-	],
-	"author": {
-		"email": "mhaid2016@outlook.com",
-		"name": "Morris Haid"
-	},
-	"contributors": {
-		"developers": [
-			{
-				"email": "moh2014@live.de",
-				"name": "Michael Haid"
-			},
-			{
-				"email": "mhaid2016@outlook.com",
-				"name": "Morris Haid"
-			}
-		]
-	},
-	"bugs": {
-		"url": "https://github.com/mhaid/de.mhaid.permundo/issues"
-	},
-	"source": "https://github.com/mhaid/de.mhaid.permundo",
-	"support": "mailto:mhaid2016@outlook.com",
-	"drivers": [
-		{
-			"id": "PSC132ZW",
-			"class": "socket",
-			"capabilities": [ 
-				"onoff",
-				"measure_power"
-			],
-			"name": {
-				"en": "Installation Relais PSC132ZW",
-				"nl": "Installatierelais PSC132ZW",
-				"de": "Einbau-Relais PSC132ZW"
-			},
-			"zwave": {
-				"manufacturerId": 581,
-				"productTypeId": 3,
-				"productId": 2,
-				"learnmode": {
-					"image": "/drivers/PSC132ZW/assets/learnmode.svg",
-					"instruction": {
-						"en": "Hold the button on your Permundo relais for three seconds.",
-						"nl": "Houd de knop op je Permundo-relais drie seconden lang vast.",
-						"de": "Halten Sie die Taste an Ihrem Permundo-Relais drei Sekunden lang gedrückt."
-					}
-				},
-				"associationGroups": [
-					1
-				],
-				"associationGroupsOptions": {
-					"1": {
-						"hint": {
-							"en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
-							"nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
-							"de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
-						}
-					}
-				}
-			},
-			"images": {
-				"large": "/drivers/PSC132ZW/assets/images/large.png",
-				"small": "/drivers/PSC132ZW/assets/images/small.png"
-			}
-		},
-		{
-			"id": "PSC152ZW",
-			"class": "blinds",
-			"capabilities": [ 
-				"dim",
-				"windowcoverings_state",
-				"measure_power"
-			],
-			"name": {
-				"en": "Shutter Actuator PSC152ZW",
-				"nl": "Jaloezieactor PSC152ZW",
-				"de": "Einbau-Jalousieaktor PSC152ZW"
-			},
-			"zwave": {
-				"manufacturerId": 581,
-				"productTypeId": 3,
-				"productId": 4,
-				"learnmode": {
-					"image": "/drivers/PSC152ZW/assets/learnmode.svg",
-					"instruction": {
-						"en": "Hold the button on your Permundo actuator for three seconds.",
-						"nl": "Houd de knop op je Permundo-actor drie seconden lang vast.",
-						"de": "Halten Sie die Taste an Ihrem Permundo-Aktor drei Sekunden lang gedrückt."
-					}
-				},
-				"associationGroups": [
-					1,
-					2
-				],
-				"associationGroupsOptions": {
-					"1": {
-						"hint": {
-							"en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
-							"nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
-							"de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
-						}
-					}
-				}
-			},
-			"images": {
-				"large": "/drivers/PSC152ZW/assets/images/large.png",
-				"small": "/drivers/PSC152ZW/assets/images/small.png"
-			},
-			"settings": [
-			{
-				"id": "operating_mode",
-				"type": "dropdown",
-				"label": {
-					"en": "Operating mode",
-					"nl": "Besturingsmodus",
-					"de": "Betriebsmodus"
-				},
-				"hint": {
-					"en": "This parameter (30) determines the operating mode for this device.",
-					"nl": "Deze parameter (30) bepaalt de modus van dit apparaat.",
-					"de": "Dieser Parameter (30) bestimmt den Betriebsmodus des Geräts."
-				},
-				"zwave": {
-					"index": 30,
-					"size": 1
-				},
-				"value": "0",
-				"values": [
-				{
-					"id": "0",
-					"label": {
-						"en": "Roller blind mode, without slat adjustment",
-						"nl": "Rolluik modus, zonder lamellenverstelling",
-						"de": "Rolladenmodus ohne Lamellenverstellung"
-					}
- 				},
-				{
-					"id": "64",
-					"label": {
-						"en": "Venetian blind mode, with slat adjustment",
-						"nl": "Jaloezie modus, met lamellenverstelling",
-						"de": "Jalousiemodus mit Lamellenverstellung"
-					}
-				}
-				]
-			}
-			]
-		}
-	]
+  "id": "de.mhaid.permundo",
+  "sdk": 3,
+  "version": "3.1.0",
+  "compatibility": ">=5.0.0",
+  "brandColor": "#b9c526",
+  "name": {
+    "nl": "Permundo",
+    "en": "Permundo",
+    "de": "Permundo"
+  },
+  "description": {
+    "en": "The Smart Control company",
+    "nl": "The Smart Control company",
+    "de": "The Smart Control company"
+  },
+  "category": [
+    "appliances",
+    "lights",
+    "security"
+  ],
+  "tags": {
+    "en": [
+      "Permundo",
+      "socket",
+      "blinds"
+    ],
+    "nl": [
+      "Permundo",
+      "stopcontact",
+      "Jaloezieën"
+    ],
+    "de": [
+      "Permundo",
+      "Steckdose",
+      "Jalousien"
+    ]
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "permissions": [
+    "homey:manager:ledring",
+    "homey:manager:speech-output"
+  ],
+  "author": {
+    "email": "mhaid2016@outlook.com",
+    "name": "Morris Haid"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "email": "moh2014@live.de",
+        "name": "Michael Haid"
+      },
+      {
+        "email": "mhaid2016@outlook.com",
+        "name": "Morris Haid"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/mhaid/de.mhaid.permundo/issues"
+  },
+  "source": "https://github.com/mhaid/de.mhaid.permundo",
+  "support": "mailto:mhaid2016@outlook.com",
+  "drivers": [
+    {
+      "id": "PSC132ZW",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "name": {
+        "en": "Installation Relais PSC132ZW",
+        "nl": "Installatierelais PSC132ZW",
+        "de": "Einbau-Relais PSC132ZW"
+      },
+      "zwave": {
+        "manufacturerId": 581,
+        "productTypeId": 3,
+        "productId": 2,
+        "learnmode": {
+          "image": "/drivers/PSC132ZW/assets/learnmode.svg",
+          "instruction": {
+            "en": "Hold the button on your Permundo relais for three seconds.",
+            "nl": "Houd de knop op je Permundo-relais drie seconden lang vast.",
+            "de": "Halten Sie die Taste an Ihrem Permundo-Relais drei Sekunden lang gedrückt."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
+              "nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
+              "de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
+            }
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/PSC132ZW/assets/images/large.png",
+        "small": "/drivers/PSC132ZW/assets/images/small.png"
+      }
+    },
+    {
+      "id": "PSC152ZW",
+      "class": "blinds",
+      "capabilities": [
+        "dim",
+        "windowcoverings_state",
+        "measure_power"
+      ],
+      "name": {
+        "en": "Shutter Actuator PSC152ZW",
+        "nl": "Jaloezieactor PSC152ZW",
+        "de": "Einbau-Jalousieaktor PSC152ZW"
+      },
+      "zwave": {
+        "manufacturerId": 581,
+        "productTypeId": 3,
+        "productId": 4,
+        "learnmode": {
+          "image": "/drivers/PSC152ZW/assets/learnmode.svg",
+          "instruction": {
+            "en": "Hold the button on your Permundo actuator for three seconds.",
+            "nl": "Houd de knop op je Permundo-actor drie seconden lang vast.",
+            "de": "Halten Sie die Taste an Ihrem Permundo-Aktor drei Sekunden lang gedrückt."
+          }
+        },
+        "associationGroups": [
+          1,
+          2
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
+              "nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
+              "de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
+            }
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/PSC152ZW/assets/images/large.png",
+        "small": "/drivers/PSC152ZW/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "operating_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating mode",
+            "nl": "Besturingsmodus",
+            "de": "Betriebsmodus"
+          },
+          "hint": {
+            "en": "This parameter (30) determines the operating mode for this device.",
+            "nl": "Deze parameter (30) bepaalt de modus van dit apparaat.",
+            "de": "Dieser Parameter (30) bestimmt den Betriebsmodus des Geräts."
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Roller blind mode, without slat adjustment",
+                "nl": "Rolluik modus, zonder lamellenverstelling",
+                "de": "Rolladenmodus ohne Lamellenverstellung"
+              }
+            },
+            {
+              "id": "64",
+              "label": {
+                "en": "Venetian blind mode, with slat adjustment",
+                "nl": "Jaloezie modus, met lamellenverstelling",
+                "de": "Jalousiemodus mit Lamellenverstellung"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PSC234ZW",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "name": {
+        "en": "Smart Plug PSC234ZW",
+        "nl": "Adapterstekker PSC234ZW",
+        "de": "Zwischenstecker PSC234ZW"
+      },
+      "zwave": {
+        "manufacturerId": 581,
+        "productTypeId": 3,
+        "productId": 1,
+        "learnmode": {
+          "image": "/drivers/PSC234ZW/assets/learnmode.svg",
+          "instruction": {
+            "en": "Hold the button on your Permundo smart plug for three seconds.",
+            "nl": "Houd de knop op je Permundo-Adapterstekker drie seconden lang vast.",
+            "de": "Halten Sie die Taste an Ihrem Permundo-Zwischenstecker drei Sekunden lang gedrückt."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Device will send it's state to these associated node(s). (Z-wave lifeline)",
+              "nl": "Apparaat verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)",
+              "de": "Produkt sendet seinen Status zu diese(m/n) zugeordneten Knoten. (Z-wave lifeline)"
+            }
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/PSC234ZW/assets/images/large.png",
+        "small": "/drivers/PSC234ZW/assets/images/small.png"
+      }
+    }
+  ]
 }
